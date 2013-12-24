@@ -10,7 +10,9 @@
    <div id='banner'>
    <%= image_tag('logo.png') %>
    <%= @page_title || "Pragmatic Bookshelf" %>
+     <span id='visits'>You've viewed the catalog <%= pluralize(@visits.to_i, 'time') %> since adding to your cart.</span>
      </div>
+
    <div id='columns'>
      <div id='side'>
        <span class='time'>
@@ -25,6 +27,7 @@
        </ul>
      </div>
      <div id='main'><%= yield %></div>
+
    </div>
 
 
