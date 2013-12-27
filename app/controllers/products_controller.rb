@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_product
   # GET /products
   # GET /products.json
   def index
@@ -10,6 +10,12 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+
+  end
+
+  def invalid_product
+	  logger.error "Attempt to access invalid product #{params[:id]}"
+	  redirect_to products_url, notice: 'invalid product'
   end
 
   # GET /products/new

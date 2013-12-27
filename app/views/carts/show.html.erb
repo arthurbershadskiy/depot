@@ -1,10 +1,23 @@
 <p id="notice"><%= notice %></p>
-<h2>My Cart</h2>
-<ul>
-  <% @cart.line_items.each {|item| %>
-  <li><%= item.product.title %></li>
-  <% } %>
+<div class='cart_title'>My Cart</div>
+<table>
 
-</ul>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+  <% @cart.line_items.each {|item| %>
+      <tr>
+        <td><%= item.quantity %> &times; </td>
+        <td><%= item.product.title %></td>
+        <td class='item_price'><%= number_to_currency(item.total_price) %></td>
+        <td><%= button_to 'Delete item', item, method: :delete, :confirm => 'Are you sure you want to delete this item?' %>     </td>
+      </tr>
+
+  <% } %>
+      <tr class='total_line'>
+        <td colspan="2">Total</td>
+        <td class='total_cell'><%= number_to_currency(@cart.total_price)%></td>
+      </tr>
+
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete, :confirm => 'Are you sure you want to delete everything in your cart?' %>
+
+<%= link_to 'Back to catalog', store_url %>
