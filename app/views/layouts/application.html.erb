@@ -25,6 +25,13 @@
          <li><a href='store/contact'>Contact</a></li>
 
        </ul>
+       <div id='cart'
+         <% if @cart.line_items.empty? %>
+             style='display: none'
+             <%end %>
+             >
+         <%= render @cart %>
+       </div>
      </div>
      <div id='main'><%= yield %></div>
 

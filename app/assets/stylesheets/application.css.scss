@@ -11,7 +11,9 @@
  *= require_self
  *= require_tree .
  */
-
+/*
+*= require jquery.ui.all
+*/
 #banner {
   background: #9c9;
   padding: 10px;
@@ -55,8 +57,22 @@
 #side{
   float: left;
   padding: 1em 2em;
-  width: 13em;
+  width: 12em;
+
   background: #141;
+
+  input {
+    font-size: small;
+  }
+  #cart {
+    font-size: smaller;
+    color: #ffffff;
+  }
+  table {
+    border-top: 1px dotted #595;
+    border-bottom: 1px dotted #595;
+    margin-bottom: 10px;
+  }
   ul {
     padding: 0;
   }

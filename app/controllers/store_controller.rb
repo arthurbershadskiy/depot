@@ -8,6 +8,7 @@ class StoreController < ApplicationController
 	def index
 		@products = Product.order(:title)
 		@visits = counter
+		@cart = current_cart
   end
 	def news
 
