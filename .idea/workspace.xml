@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7af33882-4ac2-4cc0-b964-bce3581ea4ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carts/_cart.html.erb" afterPath="$PROJECT_DIR$/app/views/carts/_cart.html.erb" />
-    </list>
+    <list default="true" id="7af33882-4ac2-4cc0-b964-bce3581ea4ca" name="Default" comment="" />
     <ignored path="depot.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/20131208012524_create_products.rb" changelist="7af33882-4ac2-4cc0-b964-bce3581ea4ca" time="1386466044393" ignored="false" />
