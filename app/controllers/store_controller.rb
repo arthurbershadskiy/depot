@@ -19,4 +19,5 @@ class StoreController < ApplicationController
 	def contact
 
 	end
+
 end
