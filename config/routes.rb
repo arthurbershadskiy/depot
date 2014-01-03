@@ -1,8 +1,10 @@
 Depot::Application.routes.draw do
   resources :line_items do
-	  put 'decrement', on: :member
+	  post 'decrement', on: :member
   end
-
+  resources :line_items do
+	  post 'increment', on: :member
+  end
   resources :carts
 
   get "store/index"

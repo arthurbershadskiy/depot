@@ -65,19 +65,34 @@ class LineItemsController < ApplicationController
     end
   end
   def decrement
-		@cart = current_cart
+	  @cart = current_cart
 	  @line_item = @cart.decrement_line_item_quantity(params[:id])
-		respond_to do |format|
-			if @line_item.save
-				format.html {redirect_to store_path}
-				format.js {@current_item = @line_item}
-				format.json {head :ok }
-			else
-				format.html {render action: :edit}
-				format.js {@current_item = @line_item}
-				format.json { render json: @line_item.errors, status: :unprocessable_entity }
-			end
-		end
+	  respond_to do |format|
+		  if @line_item.save
+			  format.html {redirect_to store_path}
+			  format.js {@current_item = @line_item}
+			  format.json {head :ok }
+		  else
+			  format.html {render action: :edit}
+			  format.js {@current_item = @line_item}
+			  format.json { render json: @line_item.errors, status: :unprocessable_entity }
+		  end
+	  end
+  end
+  def increment
+	  @cart = current_cart
+	  @line_item = @cart.increment_line_item_quantity(params[:id])
+	  respond_to do |format|
+		  if @line_item.save
+			  format.html {redirect_to store_path}
+			  format.js {@current_item = @line_item}
+			  format.json {head :ok }
+		  else
+			  format.html {render action: :edit}
+			  format.js {@current_item = @line_item}
+			  format.json { render json: @line_item.errors, status: :unprocessable_entity }
+		  end
+	  end
   end
 
 

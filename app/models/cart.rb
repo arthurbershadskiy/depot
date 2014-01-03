@@ -25,4 +25,11 @@ class Cart < ActiveRecord::Base
 
 		current_item
 	end
+	def increment_line_item_quantity(line_item_id)
+		current_item = line_items.find(line_item_id)
+		current_item.quantity += 1
+
+
+		current_item
+	end
 end
